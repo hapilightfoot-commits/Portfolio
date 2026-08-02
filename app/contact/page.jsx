@@ -1,6 +1,6 @@
 import { Mail, Instagram, Github } from "lucide-react";
 
-export const metadata = { title: "Contact — Your Name" };
+export const metadata = { title: "Contact — Hapi Lightfoot" };
 
 const LINKS = [
   { label: "Email", href: "mailto:you@example.com", icon: Mail },
@@ -10,7 +10,7 @@ const LINKS = [
 
 export default function Contact() {
   return (
-    <div className="max-w-2xl mx-auto px-6 py-20 sm:py-28">
+    <div className="max-w-2xl mx-auto px-6 pt-32 pb-20">
       <p className="eyebrow mb-5">Contact</p>
       <h1 className="font-display text-4xl sm:text-5xl mb-6">Let's talk.</h1>
       <p className="text-muted mb-12 max-w-md">

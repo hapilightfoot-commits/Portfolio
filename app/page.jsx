@@ -1,59 +1,57 @@
 import Link from "next/link";
+import { ArrowDown } from "lucide-react";
+import Reveal from "@/components/Reveal";
+import WorksList from "@/components/WorksList";
 
-const TILES = [
-  { href: "/photography", label: "Photography", note: "Stills, series, and contact sheets" },
-  { href: "/films", label: "Films", note: "Short films and video work" },
-  { href: "/projects", label: "Projects", note: "Design and engineering work" },
-  { href: "/apps", label: "Apps", note: "Small tools, each with its own page" },
+const FEATURED = [
+  { id: "soulful-mourning", title: "Soulful Mourning", category: "Short Film", videoId: "PfUpaZ1OTNA" },
+  { id: "mirrors-latest", title: "Mirrors to Stages", category: "Live Music Experience", videoId: "ZIsB_kciPfs" },
+  { id: "culture-alchemists", title: "Culture Alchemists", category: "Docuseries", videoId: "ugt-gk6E9gw" },
 ];
 
 export default function Home() {
   return (
-    <div className="max-w-5xl mx-auto px-6">
-      <section className="py-24 sm:py-32">
-        <p className="eyebrow mb-5">Portfolio</p>
-        <h1 className="font-display text-5xl sm:text-7xl leading-[1.05] max-w-3xl">
-          Photography, film, and things I build.
-        </h1>
-        <p className="font-body text-muted text-lg mt-6 max-w-xl">
-          A running record of visual and technical work — replace this with a line or two
-          about who you are and what you make.
-        </p>
-        <div className="flex gap-4 mt-9">
-          <Link
-            href="/projects"
-            className="bg-amber text-ink font-body text-sm font-medium px-5 py-3 rounded-full hover:opacity-90 transition-opacity"
-          >
-            See the work
-          </Link>
-          <Link
-            href="/contact"
-            className="border border-line text-parchment font-body text-sm font-medium px-5 py-3 rounded-full hover:border-muted transition-colors"
-          >
-            Get in touch
-          </Link>
+    <div>
+      {/* Full-bleed cinematic hero */}
+      <section className="relative min-h-screen flex flex-col justify-center px-6 overflow-hidden">
+        <div
+          className="absolute inset-0 -z-10"
+          style={{
+            background:
+              "radial-gradient(ellipse 80% 60% at 30% 20%, rgba(232,163,61,0.10), transparent 60%), linear-gradient(180deg, #14130F, #0F0E0A)",
+          }}
+        />
+        <div className="max-w-6xl mx-auto w-full">
+          <p className="eyebrow mb-6">Hapi Lightfoot</p>
+          <h1 className="hero-title text-parchment max-w-5xl">
+            Stories. Images.
+            <br />
+            Ideas. Tools.
+          </h1>
+          <p className="font-body text-muted text-lg sm:text-xl mt-8 max-w-xl leading-relaxed">
+            I create films, photographs, essays, and digital experiences that explore
+            people, culture, creativity, and technology. This is where I share my work,
+            document my journey, and build tools that help others create and learn.
+          </p>
+        </div>
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-muted animate-bounce">
+          <ArrowDown size={18} />
         </div>
       </section>
 
-      <section className="pb-24">
-        <div className="sprocket-rule mb-10" />
-        <div className="grid sm:grid-cols-2 gap-4">
-          {TILES.map((t, i) => (
-            <Link
-              key={t.href}
-              href={t.href}
-              className="group border border-line rounded-2xl px-6 py-6 hover:border-amber/60 transition-colors"
-            >
-              <div className="flex items-start justify-between">
-                <span className="eyebrow">{String(i + 1).padStart(2, "0")}</span>
-              </div>
-              <h2 className="font-display text-2xl mt-3 group-hover:text-amber transition-colors">
-                {t.label}
-              </h2>
-              <p className="text-muted text-sm mt-1">{t.note}</p>
+      {/* Featured work */}
+      <section className="max-w-6xl mx-auto px-6 py-24 sm:py-32">
+        <Reveal>
+          <div className="flex items-baseline justify-between mb-10">
+            <h2 className="font-display text-3xl sm:text-4xl">Selected work</h2>
+            <Link href="/portfolio" className="eyebrow hover:text-amber transition-colors">
+              View all
             </Link>
-          ))}
-        </div>
+          </div>
+        </Reveal>
+        <Reveal delay={120}>
+          <WorksList works={FEATURED} />
+        </Reveal>
       </section>
     </div>
   );

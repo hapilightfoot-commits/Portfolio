@@ -2,28 +2,40 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
 const LINKS = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
+  { href: "/portfolio", label: "Portfolio" },
   { href: "/photography", label: "Photography" },
-  { href: "/films", label: "Films" },
-  { href: "/projects", label: "Projects" },
   { href: "/apps", label: "Apps" },
+  { href: "/journal", label: "Journal" },
   { href: "/contact", label: "Contact" },
 ];
 
 export default function Nav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-ink/90 backdrop-blur">
-      <nav className="max-w-5xl mx-auto flex items-center justify-between px-6 py-5">
-        <Link href="/" className="font-display text-2xl tracking-tight text-parchment">
-          Your Name
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ${
+        scrolled ? "bg-ink/90 backdrop-blur border-b border-line" : "bg-transparent"
+      }`}
+    >
+      <nav className="max-w-6xl mx-auto flex items-center justify-between px-6 py-5">
+        <Link href="/" className="font-display text-xl tracking-tight text-parchment">
+          Hapi Lightfoot
         </Link>
 
         <button
@@ -34,14 +46,14 @@ export default function Nav() {
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
 
-        <ul className="hidden sm:flex items-center gap-7">
+        <ul className="hidden sm:flex items-center gap-8">
           {LINKS.map((link) => {
             const active = pathname === link.href;
             return (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`font-body text-sm transition-colors ${
+                  className={`font-body text-xs tracking-wide uppercase transition-colors ${
                     active ? "text-amber" : "text-muted hover:text-parchment"
                   }`}
                 >
@@ -54,7 +66,7 @@ export default function Nav() {
       </nav>
 
       {open && (
-        <ul className="sm:hidden flex flex-col gap-1 px-6 pb-5">
+        <ul className="sm:hidden flex flex-col gap-1 px-6 pb-5 bg-ink/95 backdrop-blur">
           {LINKS.map((link) => {
             const active = pathname === link.href;
             return (
@@ -62,7 +74,7 @@ export default function Nav() {
                 <Link
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className={`block py-2 font-body text-sm ${
+                  className={`block py-2 font-body text-sm uppercase tracking-wide ${
                     active ? "text-amber" : "text-muted"
                   }`}
                 >
@@ -73,8 +85,6 @@ export default function Nav() {
           })}
         </ul>
       )}
-
-      <div className="sprocket-rule" />
     </header>
   );
 }

@@ -1,4 +1,4 @@
-export const metadata = { title: "About — Your Name" };
+export const metadata = { title: "About — Hapi Lightfoot" };
 
 const SKILLS = [
   "Photography",
@@ -11,7 +11,7 @@ const SKILLS = [
 
 export default function About() {
   return (
-    <div className="max-w-3xl mx-auto px-6 py-20 sm:py-28">
+    <div className="max-w-3xl mx-auto px-6 pt-32 pb-20">
       <p className="eyebrow mb-5">About</p>
       <h1 className="font-display text-4xl sm:text-5xl mb-8">A short bio goes here.</h1>
       <div className="space-y-5 font-body text-parchment/90 leading-relaxed">

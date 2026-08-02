@@ -1,4 +1,4 @@
-export const metadata = { title: "Photography — Your Name" };
+export const metadata = { title: "Photography — Hapi Lightfoot" };
 
 const SERIES = Array.from({ length: 9 }).map((_, i) => ({
   id: i + 1,
@@ -7,7 +7,7 @@ const SERIES = Array.from({ length: 9 }).map((_, i) => ({
 
 export default function Photography() {
   return (
-    <div className="max-w-5xl mx-auto px-6 py-20 sm:py-28">
+    <div className="max-w-5xl mx-auto px-6 pt-32 pb-20">
       <p className="eyebrow mb-5">Photography</p>
       <h1 className="font-display text-4xl sm:text-5xl mb-4">Selected work</h1>
       <p className="text-muted max-w-xl mb-12">

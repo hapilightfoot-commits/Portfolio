@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export const metadata = { title: "Apps — Your Name" };
+export const metadata = { title: "Apps — Hapi Lightfoot" };
 
 // Add a new entry here, and a matching folder at app/apps/<slug>/page.jsx,
 // whenever you ship a new app. Each one gets its own route.
@@ -14,7 +14,7 @@ const APPS = [
 
 export default function AppsIndex() {
   return (
-    <div className="max-w-5xl mx-auto px-6 py-20 sm:py-28">
+    <div className="max-w-5xl mx-auto px-6 pt-32 pb-20">
       <p className="eyebrow mb-5">Apps</p>
       <h1 className="font-display text-4xl sm:text-5xl mb-4">Things I've built</h1>
       <p className="text-muted max-w-xl mb-12">

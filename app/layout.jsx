@@ -3,7 +3,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Your Name — Portfolio",
+  title: "Hapi Lightfoot — Portfolio",
   description: "Photography, films, projects, and apps.",
 };
 
