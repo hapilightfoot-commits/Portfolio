@@ -1,16 +1,5 @@
 export const metadata = { title: "About — Hapi Lightfoot" };
 
-const SKILLS = [
-  "Photography",
-  "Filmmaking",
-  "Product Design",
-  "Frontend Engineering",
-  "Editing",
-  "Sound Design",
-];
-
-export const metadata = { title: "About — Hapi Lightfoot" };
-
 export default function About() {
   return (
     <div className="max-w-3xl mx-auto px-6 pt-32 pb-20">
