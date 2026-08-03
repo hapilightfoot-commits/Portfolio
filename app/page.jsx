@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown } from "lucide-react";
 import Reveal from "@/components/Reveal";
@@ -14,11 +15,18 @@ export default function Home() {
     <div>
       {/* Full-bleed cinematic hero */}
       <section className="relative min-h-screen flex flex-col justify-center px-6 overflow-hidden">
+        <Image
+          src="/images/hapihero.jpeg"
+          alt="Behind the scenes on set"
+          fill
+          priority
+          className="object-cover -z-20"
+        />
         <div
           className="absolute inset-0 -z-10"
           style={{
             background:
-              "radial-gradient(ellipse 80% 60% at 30% 20%, rgba(232,163,61,0.10), transparent 60%), linear-gradient(180deg, #14130F, #0F0E0A)",
+              "linear-gradient(180deg, rgba(20,19,15,0.55) 0%, rgba(20,19,15,0.35) 40%, rgba(20,19,15,0.85) 100%)",
           }}
         />
         <div className="max-w-6xl mx-auto w-full">
