@@ -16,7 +16,7 @@ export default function Home() {
       {/* Full-bleed cinematic hero */}
       <section className="relative min-h-screen flex flex-col justify-center px-6 overflow-hidden">
         <Image
-          src="/images/hapihero.jpeg"
+          src="/images/HapiHero.jpeg"
           alt="Behind the scenes on set"
           fill
           priority
