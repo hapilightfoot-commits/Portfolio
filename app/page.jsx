@@ -32,14 +32,16 @@ export default function Home() {
         <div className="max-w-6xl mx-auto w-full">
           <p className="eyebrow mb-6">Hapi Lightfoot</p>
           <h1 className="hero-title text-parchment max-w-5xl">
-            Stories. Images.
+            Stories. Culture.
             <br />
-            Ideas. Tools.
+            Healing. Creation.
           </h1>
           <p className="font-body text-muted text-lg sm:text-xl mt-8 max-w-xl leading-relaxed">
-            I create films, photographs, essays, and digital experiences that explore
-            people, culture, creativity, and technology. This is where I share my work,
-            document my journey, and build tools that help others create and learn.
+           <p className="font-body text-muted text-lg sm:text-xl mt-8 max-w-xl leading-relaxed">
+  I create films, stories, and creative experiences that explore culture,
+  community, healing, and the human experience. This is where I share my work,
+  document my journey, and create tools and spaces that help others connect,
+  create, and grow.
           </p>
         </div>
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-muted animate-bounce">
